@@ -1,0 +1,6 @@
+[x] Esperando por mensajes. CTRL+C para salir.
+[x] recibido 'error':'Ha occurido un error.'
+[x] recibido 'warning':'evento en warning.'
+[x] recibido 'error':'Ha occurido un error2.'
+[x] recibido 'warning':'evento en warning2.'
+[x] recibido 'error':'Ha occurido un error3.'
