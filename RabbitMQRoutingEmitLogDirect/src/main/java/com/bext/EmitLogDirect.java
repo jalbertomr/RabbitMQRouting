@@ -3,6 +3,8 @@ package com.bext;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+import com.rabbitmq.client.AMQP;
+import com.rabbitmq.client.BasicProperties;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -20,7 +22,8 @@ public class EmitLogDirect {
 			String logLevel = getLogLevel(args);
 			String message = getMessage(args);
 			
-			channel.basicPublish(EXCHANGE_NAME, logLevel, null, message.getBytes("UTF-8"));
+			AMQP.BasicProperties props = null;
+			channel.basicPublish(EXCHANGE_NAME, logLevel, props, message.getBytes("UTF-8"));
 			System.out.println(" [x] Enviado '" + logLevel + "':'" + message + "'");
 		} 
 	}
